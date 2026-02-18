@@ -200,14 +200,14 @@
     background-position: center;
 }
 
-.quote-hero-overlay {
+/* .quote-hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, rgba(26, 152, 71, 0.94) 0%, rgba(21, 122, 56, 0.94) 100%);
-}
+} */
 
 .quote-hero-content {
     position: relative;
