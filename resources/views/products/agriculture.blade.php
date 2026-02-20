@@ -49,27 +49,18 @@
 
         <div class="agri-products-grid">
             @foreach($products as $product)
+            @php
+                $agriProductImage = match ($product) {
+                    'Agricultural Lime' => asset('images/agric03.jpg'),
+                    'Chicken Grit' => asset('images/agric01.jpg'),
+                    'Fertilizer Fillers' => asset('images/agric04.jpg'),
+                    'Dolomite' => asset('images/agric02.jpg'),
+                    default => asset('images/agric01.jpg'),
+                };
+            @endphp
             <div class="agri-product-card" data-animate>
                 <div class="agri-product-visual">
-                    <div class="agri-icon-box">
-                        @if(str_contains($product, 'Lime'))
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                            </svg>
-                        @elseif(str_contains($product, 'Chicken'))
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
-                            </svg>
-                        @elseif(str_contains($product, 'Fertilizer'))
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
-                            </svg>
-                        @else
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        @endif
-                    </div>
+                    <img src="{{ $agriProductImage }}" alt="{{ $product }}" class="agri-product-image">
                     <div class="agri-badge">Agricultural Grade</div>
                 </div>
                 <div class="agri-product-content">
@@ -529,33 +520,24 @@
 }
 
 .agri-product-visual {
-    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
-    padding: 40px;
-    text-align: center;
     position: relative;
+    height: 240px;
+    overflow: hidden;
 }
 
-.agri-icon-box {
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-}
-
-.agri-icon-box svg {
-    width: 50px;
-    height: 50px;
-    color: #ffffff;
+.agri-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .agri-badge {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(28, 28, 30, 0.75);
     color: #ffffff;
     padding: 8px 20px;
     border-radius: 20px;

@@ -23,18 +23,47 @@
 
     <div class="hero-stats">
         <div class="stat-item">
+            <span class="hero-stat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v6l4 2"></path>
+                </svg>
+            </span>
             <span class="stat-number" data-count="12">0</span>
             <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat-item">
+            <span class="hero-stat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="3.5"></circle>
+                    <path d="M20 8a3 3 0 0 1 0 6"></path>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                </svg>
+            </span>
             <span class="stat-number" data-count="500">0</span>
             <span class="stat-label">Happy Clients</span>
         </div>
         <div class="stat-item">
+            <span class="hero-stat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 7l9-4 9 4-9 4-9-4z"></path>
+                    <path d="M3 7v10l9 4 9-4V7"></path>
+                    <path d="M12 11v10"></path>
+                </svg>
+            </span>
             <span class="stat-number" data-count="1000">0</span>
             <span class="stat-label">Products</span>
         </div>
         <div class="stat-item">
+            <span class="hero-stat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 12a8 8 0 0 1 16 0"></path>
+                    <rect x="2" y="12" width="4" height="7" rx="2"></rect>
+                    <rect x="18" y="12" width="4" height="7" rx="2"></rect>
+                    <path d="M12 20v1a2 2 0 0 1-2 2H8"></path>
+                </svg>
+            </span>
             <span class="stat-number" data-count="24">0</span>
             <span class="stat-label">Hour Support</span>
         </div>

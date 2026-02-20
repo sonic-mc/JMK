@@ -82,7 +82,26 @@
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const navOverlay = document.getElementById('navOverlay');
+    const quoteButton = document.querySelector('.btn-quote');
     const body = document.body;
+
+    function applyDesktopQuoteOverlap() {
+        if (!quoteButton) {
+            return;
+        }
+
+        if (window.innerWidth > 992) {
+            quoteButton.style.marginLeft = '-4px';
+            quoteButton.style.marginRight = '-4px';
+            quoteButton.style.paddingLeft = '36px';
+            quoteButton.style.paddingRight = '36px';
+        } else {
+            quoteButton.style.marginLeft = '';
+            quoteButton.style.marginRight = '';
+            quoteButton.style.paddingLeft = '';
+            quoteButton.style.paddingRight = '';
+        }
+    }
     
     function toggleMenu() {
         navMenu.classList.toggle('active');
@@ -100,6 +119,8 @@
 
     navToggle.addEventListener('click', toggleMenu);
     navOverlay.addEventListener('click', closeMenu);
+    window.addEventListener('resize', applyDesktopQuoteOverlap);
+    applyDesktopQuoteOverlap();
 
     // Close menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-link');
